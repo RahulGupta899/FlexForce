@@ -1,38 +1,219 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+    font-family: 'Josefin Sans';
+    background-color: #FFFAFB;
   }
-}
+  
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  .right-arrow,
+  .left-arrow {
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF2625;
+    font-size: 25px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: -20px;
+    right: 80px;
+    transform: scale(1, 1);
+    transition: 0.3s all ease-in-out;
+  }
+  
+  .right-arrow {
+    right: 140px;
+  }
+  
+  .right-arrow:hover,
+  .left-arrow:hover {
+    transform: scale(1.3, 1.3);
+  }
+  
+  .react-horizontal-scrolling-menu--wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .detail-image {
+    width: 729px;
+    height: 742px;
+  }
+  
+  .hero-banner-img {
+    position: absolute;
+    right: 0px;
+    top: 46px;
+    width: 684px;
+    height: 900px;
+    margin-top: -330px;
+  }
+  
+  .exercise-card {
+    margin: 10px;
+    width: 435px;
+    height: 455px;
+    background: #fff;
+    border-bottom-left-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-right: 8px;
+    transform: scale(1, 1);
+    transition: 0.3s all ease-in-out;
+    /* padding-right: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  
+  .exercise-card img {
+    height: 326px;
+  }
+  
+  .bodyPart-card {
+    transform: scale(1,1);
+    transition: 0.3s all ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+  
+  .exercise-card:hover,
+  .bodyPart-card:hover {
+    transform: scale(1.01, 1.01);
+  }
+  
+  .search-btn:hover {
+    color: #FF2625 !important;
+    border: 1px solid #FF2625 !important;
+  }
+  
+  .exercise-video {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 387px;
+    height: 381px;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width:1200px) {
+    .detail-image {
+      width: 300px;
+      height: 300px;
+    }
+  
+  
+    .react-horizontal-scrolling-menu--scroll-container {
+      width: 500px;
+    }
+  
+    .left-arrow,
+    .right-arrow {
+      position: static !important;
+    }
+  
+    .hero-banner-img {
+      display: none;
+    }
+  
+    .exercise-card {
+      width: 320px;
+    }
+  
+    .exercise-video {
+      width: 320px;
+      height: 300px;
+    }
+  
+  }
+  
+ 
+
+.youtube_video_container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  overflow-x: scroll;
 }
 
-.App-link {
-  color: #61dafb;
+#footer{
+    text-align:center;
+    padding-bottom:0;
+    font-family:'Ubuntu',sans-serif;
+    font-size:1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button_area{
+  padding-left: 13px;
+}
+.button_area ul 
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* text-align: center; */
+}
+.button_area ul li
+{
+  padding: 0 4px;
+  display: inline-block;
+  font-family:'Ubuntu',sans-serif;
+}
+.button_area ul li a
+{
+  display: block;
+  padding: 8px 17px;
+  border-radius: 20px;
+  font-size: 15px;
+  color: #fff;
+  text-transform: capitalize;
+}
+.button_area ul li .btn_waist
+{
+  background-color: #ffa9a9;
+}
+.button_area ul li .btn_waist2
+{
+  background-color: #65d5b8;
+}
+.button_area ul li .btn_waist3
+{
+  background-color: #ffcc79;
+  margin-top:4px;
+}
+
+.youtube_result_container{
+  display: flex;
+  padding: 0 5px;
+}
+
+.youtube_result{
+  width: 100%;
+  background-color: #252424;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+.youtube_result a{
+  margin: 0 !important;
+}
+.youtube_result .MuiCardContent-root,
+.css-14lie54-MuiPaper-root-MuiCard-root
+{
+  box-shadow: none !important;
 }

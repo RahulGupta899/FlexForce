@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {Routes, Route} from 'react-router-dom'
+import HomePage from './Pages/HomePage'
+import SingleExercisePage from './Pages/SingleExercisePage'
+import {Box} from '@mui/material'
+import NavBar from './Components/Header-Footer/NavBar'
+import Footer from './Components/Header-Footer/Footer'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Box width="400px" sx={{width: {xl: '1488px'}}} >
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/exercise/:id' element={<SingleExercisePage/>} />
+        {/* <Route path='/exercises/:id' element={<SingleExerciseView/>} /> */}
+      </Routes>
+      <Footer/>
+    </Box>
+  )
 }
 
-export default App;
+export default App
+
+
+
+// {/* <Box width="400px" sx={ {width: {xl: '1488px'}} } >
+        //  <Navbar/>  {/*handle when exercise details componets route is opened, useParams , ternary operator */}
+        // <Routes>
+        //     <Route path="/" element={<Home/>} />
+        //     <Route path='/exercise/:id' element={<ExerciseDetails/>} />
+        // </Routes>
+        // <Footer/>
+        // </Box> */}?}
